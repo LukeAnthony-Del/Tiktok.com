@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover, interactive-widget=resizes-content" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="TikTok" />
+    <title>TikTok</title>
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="preconnect" href="https://yt.chocolatemoo53.com" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section id="feed" class="screen on">
+        <header class="topbar">
+          <div class="top-tabs">
+            <button type="button" data-action="mode" data-mode="following">Following</button>
+            <button type="button" class="on" data-action="mode" data-mode="foryou">For You</button>
+          </div>
+          <button type="button" class="search-btn" data-action="search" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16.2 20.2 20.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </header>
+        <button type="button" id="sound" class="sound-hint" data-action="sound">Tap for sound</button>
+        <div id="scroller" class="scroller"></div>
+      </section>
+
+      <section id="friends" class="screen"></section>
+      <section id="inbox" class="screen"></section>
+      <section id="profile" class="screen"></section>
+
+      <nav class="dock" aria-label="Main">
+        <button type="button" class="on" data-action="screen" data-screen="feed">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.6 12 4l8 6.6V20a1 1 0 0 1-1 1h-4.6v-6.1H9.6V21H5a1 1 0 0 1-1-1v-9.4z" fill="currentColor"/></svg>
+          <span>Home</span>
+        </button>
+        <button type="button" data-action="screen" data-screen="friends">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="16.1" cy="9" r="1.9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4.6 18.6c.7-2.5 2.5-3.7 4.4-3.7s3.7 1.2 4.4 3.7M13.2 14.4c1.1-.5 2.3-.6 3.3-.2 1.3.5 2.2 1.7 2.6 3.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Friends</span>
+        </button>
+        <button type="button" class="create" data-action="add" aria-label="Add a Short">
+          <i></i><b></b><span>+</span>
+        </button>
+        <button type="button" data-action="screen" data-screen="inbox">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.8 7.2h14.4v9.4a1 1 0 0 1-1 1H5.8a1 1 0 0 1-1-1V7.2z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4.8 8 7.2 5 7.2-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <span>Inbox</span>
+          <em id="inbox-dot" class="dot" hidden></em>
+        </button>
+        <button type="button" data-action="screen" data-screen="profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.1" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M6.2 19c.8-2.6 2.8-4 5.8-4s5 1.4 5.8 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Profile</span>
+        </button>
+      </nav>
+
+      <div id="backdrop" class="backdrop" data-action="close" hidden></div>
+      <div id="sheet" class="sheet" hidden></div>
+      <div id="search" class="overlay" hidden></div>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
